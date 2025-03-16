@@ -1,12 +1,44 @@
-# React + Vite
+SQLITE/General SQL
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SQLITE SPECIFIC---
+- activate SQLITE in terminal
+    - sqlite3 database.sqlite (<- name of database file)
 
-Currently, two official plugins are available:
+ - show tables
+    - .tables
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- show schema (table columns and types)
+    - .schema tableName 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+GENERAL SQL----
+
+- CREATE table
+    - CREATE TABLE users (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        age INTEGER
+    );
+
+- READ from table
+    - select * from tableName;    <- dont forget semicolon
+
+- UPDATE / Insert
+
+    - Update a row
+        - UPDATE users SET age = 31 WHERE name = 'John Doe';
+
+    - Insert a row into table
+        - INSERT INTO users (name, age) VALUES ('John Doe', 30);
+
+- DELETE
+    - DELETE FROM users WHERE name = 'John Doe';
+
+
+- Order by
+    - SELECT * FROM users ORDER BY age ASC;  (asceding)
+
+- Group by (groups the result set based on the specified column(s).)
+    - SELECT age, COUNT(*) AS total FROM users GROUP BY age;
+    * COUNT, SUM, AVG, MIN, MAX with GROUP BY for aggregate calculations.
